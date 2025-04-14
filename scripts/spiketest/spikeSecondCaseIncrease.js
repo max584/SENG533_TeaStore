@@ -5,11 +5,10 @@ const BASE_URL = 'http://localhost:8080/tools.descartes.teastore.webui'; // Upda
 
 export let options = {
     stages: [
-        { duration: '60s', target: 50 },
-        { duration: '120s', target: 50 },
-        { duration: '60s', target: 100 },
-        { duration: '120s', target: 100 },
-        { duration: '60s', target: 0 },
+        { duration: '60s', target: 0 },    // stay at 0 users for 60 seconds (baseline)
+         { duration: '20s', target: 100 },  // spike to 100 users over 20 seconds
+         { duration: '60s', target: 100 },  // stay at 100 users for 60 seconds (spike)
+         { duration: '20s', target: 0 },    // drop back to 0 users over 20 seconds
     ],
 };
 
